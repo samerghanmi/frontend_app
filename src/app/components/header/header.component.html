@@ -1,0 +1,63 @@
+
+
+<mat-toolbar>
+    <a class="navbar-brand" routerLink="/">
+        <span class="fs-3">
+            <mat-icon>pets</mat-icon> ZooA
+        </span>
+    </a>
+    <button mat-button class="btn btn-outline-light fs-5" routerLink="/">
+        <span>About</span>
+    </button>
+    <!-- <button mat-button class="btn btn-outline-light fs-5" routerLink="/">
+        <span>Services</span>
+    </button> -->
+    
+    <button mat-button class="btn btn-outline-light fs-5" routerLink="/veterinaire">
+        <span>Veterinary</span>
+    </button>
+    
+    <div class="spacer">
+        <mat-form-field class="search">
+            <!-- <mat-label>Search</mat-label> -->
+            <mat-icon matPreffix >search</mat-icon>
+            <input matInput type="text" [matAutocomplete]="auto"  #searchInput> 
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let el of users | filter:searchInput.value" >
+                    <div class="row" sttyle="cursor:pointer" routerLink="/profile/{{el._id}}">
+                        <div class="col-2">
+                            <img class="img-responsive img1" src="{{el.image | checkImage}}">
+                        </div>
+                        <div class="col-10" >
+                            <p class="text" style="text-align:left!important;">{{el.fname}} {{el.lname}}</p>
+                        </div>
+                    </div>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+    <button mat-button mat-raised-button class="addPost" [routerLink]="['newPost']" (click)="openDialog()">
+        <mat-icon>add_circle_outline</mat-icon> Add Post
+    </button>
+    <div *ngIf="!isAuthenticated">
+        <button mat-button class="btn btn-outline-light" routerLink="/login">
+            <mat-icon>login</mat-icon> Login
+        </button>
+        <button mat-button class="btn btn-outline-light" routerLink="/signup">
+            <mat-icon>person</mat-icon> Sign Up
+        </button>
+      
+    </div>
+    <div *ngIf="isAuthenticated && user" >
+        <img [matMenuTriggerFor]="appMenu" src="{{user?.image | checkImage}}" [ngClass]="{'img':user?.image,'avatar':!user?.image}">
+        <mat-menu #appMenu="matMenu" >
+            <button mat-menu-item routerLink="/profile"><mat-icon>account_circle</mat-icon>Profile</button>
+            <button *ngIf="user['role']=='user'" mat-menu-item [routerLink]="['/myappointments',user['_id']]"><mat-icon>calendar_today</mat-icon>My Appointments</button>
+            <button *ngIf="user['role']=='veterinary'" mat-menu-item [routerLink]="['/appointments',user['_id']]"><mat-icon>calendar_today</mat-icon>My Appointments</button>
+            <button *ngIf="user['role']=='user'" mat-menu-item [routerLink]="['/upgrade',user['_id']]"><mat-icon>calendar_today</mat-icon>Upgrade To Veterinary</button>
+            <button mat-menu-item (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
+        </mat-menu>
+     
+    </div>
+    
+</mat-toolbar>

@@ -1,0 +1,101 @@
+.shape{
+    width: 8rem;
+}
+.blueColor{
+    color:blue;
+}
+.img{
+    border-radius:50%;
+    border:1px dotted black;
+}
+
+.post {
+    width: 200px;
+    height: 300px;
+    padding: 30px;
+}
+
+
+
+.divCard{
+    border :none;
+    border-radius: 20px;
+    background-color:rgb(255, 255, 255);
+    box-shadow:1.3px 1.7px 1.5px rgba(0, 0, 0, 0.02),
+                3.1px 4px 3.7px rgba(0, 0, 0, 0.028),
+                5.8px 7.5px 6.9px rgba(0, 0, 0, 0.035),
+                10.3px 13.4px 12.3px rgba(0, 0, 0, 0.042),
+                19.2px 25.1px 23px rgba(0, 0, 0, 0.05),
+                46px 60px 55px rgba(0, 0, 0, 0.07);
+}
+.divCard:hover{
+    border:1px solid #91c6e9;
+}
+.header {
+background-color:rgb(255, 255, 255);
+color :#2691d9;
+border-radius:20px;
+font-size:1.2em;
+font-family: Poppins;
+}
+
+.body {
+    background-color:rgb(255, 255, 255);
+    color :#232425;
+    border-radius:20px;
+    font-size:1.2em;
+    font-family: Poppins;
+}
+.footer {
+    background-color:rgb(255, 255, 255);
+    color :#2691d9;
+    border-radius:20px;
+    font-size:1.2em;
+    font-family: Poppins;
+}
+
+.initialText{
+    margin-top:15%;
+    text-align:center;
+    font-weight:bold;
+    font-size:40px;
+    color:#2691d9;
+    
+}
+.postCardOut{
+    margin-top:20px;
+}
+
+.userImage{
+    width:30px;
+    height:30px;
+    border: 1 solid #2691d9;
+    cursor: pointer;
+}
+.clickable{
+    cursor: pointer;
+}
+.clickable:hover{
+    text-decoration: underline;
+}
+.valider{
+    color:#2691d9;
+    width: 30px;
+    height:30px;
+}
+.cancel{
+    color:#2691d9;
+    width: 30px;
+    height: 30px;
+}
+
+/* .intialDiv{
+    border-radius:30px;
+    background-color: aliceblue;
+    box-shadow:1.3px 1.7px 1.5px rgba(0, 0, 0, 0.02),
+    3.1px 4px 3.7px rgba(0, 0, 0, 0.028),
+    5.8px 7.5px 6.9px rgba(0, 0, 0, 0.035),
+    10.3px 13.4px 12.3px rgba(0, 0, 0, 0.042),
+    19.2px 25.1px 23px rgba(0, 0, 0, 0.05),
+    46px 60px 55px rgba(0, 0, 0, 0.07);
+} */

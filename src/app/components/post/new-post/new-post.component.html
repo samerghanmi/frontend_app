@@ -1,0 +1,28 @@
+<div style="width: 700px;height:300px;">
+    <div class="row">
+        <h1 class="text-center">Add new post</h1>
+    </div>
+    <div class="row" style="height:100px">
+        <textarea class="form-control" #description name="description" placeholder="Add description here..."
+            style="resize:none;"></textarea>
+    </div>
+    <div class="row mt-2"  style="height:30px">
+        <select name="" id="" #categorie>
+            <option value="cat">cat</option>
+            <option value="dog">dog</option>
+            <option value="bird">bird</option>
+        </select>
+
+    </div>
+    <div class="row" style="height:100px">
+        <div class="col-auto" style="margin-top:10px;">
+            <h4>Add image</h4>
+        </div>
+        <div class="col" style="margin-top:10px;margin-bottom: 10px;">
+                <input type="file" enctype="multipart/form-data" class="form-control" #images placeholder="" name="images" multiple>
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" class="btn btn-danger" (click)="addPost(description,images,categorie)" value="add post">
+    </div>
+</div>

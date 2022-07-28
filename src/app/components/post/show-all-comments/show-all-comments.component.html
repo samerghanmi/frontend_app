@@ -1,0 +1,42 @@
+<div>
+    <div class="row">
+        <div class="col-1 img" >
+            <img src="/assets/images/avatar.png" class="userImage" alt="user">
+        </div>
+        <div class="col-auto">
+            <input type="text" #comment class="commentField" placeholder="Leave comment here...">
+        </div>
+        <div class="col send">
+                <span (click)="addComment(comment.value)" class="material-icons" style="cursor: pointer;">
+                    arrow_forward
+                </span> 
+        </div>
+
+    </div>
+</div>
+
+<ul *ngFor="let comment of comments" style="margin-top:8px;">
+    <div class="row">
+        <div class="col-sm-1 img">
+            <img src="/assets/images/avatar.png" class="userImage" alt="user">
+        </div>
+        <div class="col-sm-auto comment">
+            <input type="text" name="newComment" value="" #newComment style="display:none;">
+            <div>
+                <label style="color:#424042;font-size: 15px;" *ngIf="comment['user']">{{ comment.user['fname'] }} {{ comment.user['lname'] }}</label>
+            </div>
+            <li *ngIf="showOldComment"> {{ comment['text'] }} </li>
+            <button style="display:none;" #cancel (click)="cancelchanges(newComment,cancel,validateLink)">Cancel</button>
+            <button #validateLink style="display:none;"(click)="validate(newComment,comment['_id'],cancel,validateLink)">Update</button>
+        </div>
+        <div class="col">
+            <span [matMenuTriggerFor]="appMenu" class="material-icons" style="cursor:pointer;">more_horiz</span>
+            <mat-menu #appMenu="matMenu">
+                <button mat-menu-item *ngIf="comment.user['_id']==user._id"  (click)="editComment(comment['_id'],newComment,cancel,validateLink)">Edit</button>
+                <button mat-menu-item *ngIf="comment.user['_id']==user._id" (click)="deleteComment(comment['_id'])">Delete</button>
+                <button mat-menu-item>report</button>
+
+            </mat-menu>
+        </div>
+    </div>
+</ul>

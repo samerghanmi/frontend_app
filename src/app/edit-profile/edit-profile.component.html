@@ -1,0 +1,102 @@
+<app-header></app-header>
+<mat-card class="container mt-5">
+<div class="emp-profile" >
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img #image src="{{user?.image | checkImage}}" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file" #imageFile (change)="onImagePicked(imageFile,image)"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <p class="proile-rating">RANKINGS : <span>{{user?.totalRating || 0}}/10</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="col-md-8">
+                                <div class="tab-content profile-tab" id="myTabContent">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Frist Name</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <mat-form-field>
+                                                            <mat-label>First Name</mat-label>
+                                                            <mat-icon matSuffix >account_circle</mat-icon>
+                                                            <input matInput formControlName="fname" type="text" [value]="user?.fname" > 
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Last Name</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <mat-form-field>
+                                                            <mat-label>Last name</mat-label>
+                                                            <mat-icon matSuffix >account_circle</mat-icon>
+                                                            <input matInput formControlName="lname" type="text" [value]="user?.lname" > 
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Phone</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <mat-form-field>
+                                                            <mat-label>Phone Number</mat-label>
+                                                            <mat-icon matSuffix >call</mat-icon>
+                                                            <input matInput formControlName="phone" type="text" [value]="user?.phone" > 
+                                                          </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Birthdate</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <mat-form-field>
+                                                            <mat-label>Choose a date</mat-label>
+                                                            <input matInput [matDatepicker]="picker" formControlName="birthdate" [value]="user?.birthdate">
+                                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                            <mat-datepicker #picker></mat-datepicker>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+
+                                                   
+                                    </div>
+
+                            </div>
+                            <div class="row bt" >
+                                <button mat-raised-button class="submit" type="submit" >Save</button> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> -->
+                        <button class="profile-edit-btn" routerLink="/profile"><mat-icon style="padding-top:5px">
+                            arrow_back
+                            </mat-icon></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                        </div>
+                    </div>
+
+                </div>
+            </form>           
+        </div>
+
+    </mat-card>

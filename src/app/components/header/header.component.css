@@ -1,0 +1,89 @@
+mat-toolbar{
+    background: #2691d9;
+    height:8%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    padding:0 6%;
+    margin-bottom: 1.3em;
+}
+mat-toolbar a{
+    color :#ececec;
+}
+.spacer{
+    flex:1 1 auto;
+    display:flex;
+    justify-content: center;
+}
+.addPost{
+    background-color:#ececec;
+    color:#2691d9;
+    border-radius: 10px;
+    font-size:0.9em;
+    margin-right: 1em;
+}
+.addPost:hover{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 2px solid white; 
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    transition: 0.3;
+}
+.img{
+    width: 45px;
+    border-radius: 30px;
+    border:1px solid #5c5c5c;
+    cursor: pointer;
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+.img:hover{
+    border:2px solid #2691d9;
+}
+.avatar{
+    width: 50px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.img1{
+    width: 40px;
+    border-radius: 30px;
+}
+.search{
+    width: 40%;
+
+}
+.search input{
+    width: 100%;
+    color: white;
+}
+mat-option{
+    height:80px;
+}
+/* ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label
+    color: green !important;
+   } */
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+  } 
+  .search mat-icon {
+      color:white;
+  }
+  .text{
+      font-size: 16px;
+      font-weight: bold;
+  }
+  
+/*   ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused
+   background-color: green !important;;
+  } */

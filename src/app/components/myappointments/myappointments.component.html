@@ -1,0 +1,45 @@
+<app-header></app-header>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<hr>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Veterinaire</span></th>
+                                <th><span>Date</span></th>
+                                <th><span>Hour</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Numéro de téléphone</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let appointment of appointments">
+                                    <td>
+                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                        <span class="user-subhead">{{appointment['veterinary']['fname']}}</span>
+                                    </td>
+                                    <td>{{appointment.date | date}}</td>
+                                    <td>{{appointment.hour }}</td>
+                                    <td class="text-center" [ngClass]="approvedStatus(appointment['status'])">
+                                        {{ appointment['status'] ? 'Approved' :'Pending'}} 
+                                    </td>
+                                    <td>
+                                       {{appointment['veterinary']['phone']}}
+                                    </td>
+                                  
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

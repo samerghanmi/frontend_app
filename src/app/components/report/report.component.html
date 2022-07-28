@@ -1,0 +1,19 @@
+
+<form >
+
+
+    <div class="container">
+        <label for="description" class="m-3">Description</label>
+        <textarea #description class="form-control m-3" id="description" cols="30" rows="10"  style="resize: none;"></textarea>
+        <button class="btn btn-success m-3" (click)="submit(description)">Report</button>
+    </div>
+</form>
+
+<div class="row"  *ngIf="showMsg">
+    <div class="col-xs-12">
+      <p class="alert alert-success">
+          <strong>Registration Success!</strong> Please click here to login!.
+
+      </p>
+    </div>
+  </div>

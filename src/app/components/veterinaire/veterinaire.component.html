@@ -1,0 +1,162 @@
+<!-- <h1>Veterinaires</h1>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of veterinaires">
+            <td scope="row">{{item.username}} </td>
+            <td> {{item.email}} </td>
+            <td> {{item.phone}}</td>
+            <td> {{item._id}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="Delete(item._id)">Delete</button>
+                <button class="btn btn-info" (click)="Uprove(item._id)"> Uprove</button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+ -->
+
+ <app-header></app-header>
+<!-- 
+<div class="container mt-2">
+       <div class="card card-block mb-2">
+        <h4 class="card-title">Card 1</h4>
+        <p class="card-text">Welcom to bootstrap card styles</p>
+        <a href="#" class="btn btn-primary">Submit</a>
+      </div>   
+    
+
+</div> -->
+
+<!-- <div class="container mt-2"> -->
+    <!--   <div class="card card-block mb-2">
+        <h4 class="card-title">Card 1</h4>
+        <p class="card-text">Welcom to bootstrap card styles</p>
+        <a href="#" class="btn btn-primary">Submit</a>
+      </div>   -->
+    <!-- <div class="row">
+        <div class="col-md-3 col-sm-6 item" *ngFor="let veterinaire of veterinaires">
+            <div class="card item-card card-block shadow x mr-5 ml-3 " [routerLink]="[veterinaire['_id']]" style="margin:10px"> -->
+                <!-- <h4 class="card-title text-right"><i class="material-icons">settings</i></h4> -->
+                <!-- <img src="../../../../../assets/images/avatar.png" alt="Photo of sunset">
+                <h5 class="item-card-title mt-3 mb-3">Nom:{{veterinaire['fname']}}</h5>
+                <p class="card-text"><strong>Ville:</strong> {{veterinaire['adresse']['ville']}} -
+                    {{veterinaire['adresse']['region']}}</p> -->
+                    <!-- <mat-card-actions class="">
+                        <a><button mat-raised-button color="accent"
+                                [routerLink]="[veterinaire['_id']]">Consulter</button></a>
+                    </mat-card-actions> -->
+            <!-- </div>
+            
+            
+        </div>
+
+
+
+    </div>
+
+</div> -->
+
+<!-- 
+<div class="container">
+
+    <div class="content">
+        <div fxLayout="row  justify-content-between" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="70%" fxFlex.sm="33%" *ngFor="let veterinaire of veterinaires">
+                <mat-card class="mat-elevation-z4 " style="text-align: center;">
+                    <mat-card-header>
+                        <mat-card-title> {{veterinaire['fname']}}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="../../../../../assets/images/avatar.png">
+                    <mat-card-content>
+                        <label for="email"><strong>Email:</strong> </label>
+                        <p id="email">
+                            {{veterinaire.email}}
+                        </p>
+                        <label for="phone"><strong>Numéro de telephone:</strong> </label>
+                        <p id="phone">
+                            {{veterinaire.phone}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <a><button mat-raised-button color="accent"
+                                [routerLink]="[veterinaire['_id']]">Consulter</button></a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<br>
+<br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<div class="container">
+    <div class="row justify-content-center"  >
+       
+        <div class="col-lg-10">
+            
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 mb-4 card item-card card-block shadow " *ngFor="let veterinaire of veterinaires">
+                    <div class="candidate-list candidate-grid">
+                        <div class="candidate-list-image">
+                            <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        </div>
+                        <div class="candidate-list-details">
+                            <div class="candidate-list-info">
+                                <div class="candidate-list-title">
+                                    <h5><i class="fas fa-user pr-1"></i>   {{ veterinaire['fname'] }}</h5>
+                                </div>
+                                <div class="candidate-list-option">
+                                    <ul class="list-unstyled">
+                                        <!-- <li><i class="fas fa-user pr-1"></i>{{ veterinaire['fname'] }}</li>  -->
+                                        <br>
+                                        <li><i class="fas fa-map-marker-alt pr-1"></i> {{veterinaire['adresse']['ville']}} -
+                                            {{veterinaire['adresse']['region']}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="candidate-list-favourite-time">
+                                <a class="candidate-list-favourite order-2" href="#"><i class="far fa-heart"></i></a>
+                                <span class="candidate-list-time order-1"> <mat-card-actions class="">
+                                    <a><button mat-raised-button color="accent"
+                                            [routerLink]="[veterinaire['_id']]">Consulter</button></a>
+                                </mat-card-actions></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            <div class="row">
+                <div class="col-12 text-center mt-4 mt-sm-5">
+                    <ul class="pagination justify-content-center mb-0">
+                        <li class="page-item disabled"> <span class="page-link">Prev</span> </li>
+                        <li class="page-item active" aria-current="page"><span class="page-link">1 </span> <span class="sr-only">(current)</span></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">25</a></li>
+                        <li class="page-item"> <a class="page-link" href="#">Next</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

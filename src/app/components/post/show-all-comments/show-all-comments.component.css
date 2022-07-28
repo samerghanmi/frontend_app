@@ -1,0 +1,50 @@
+li{ 
+    list-style-type: none;   
+    color: black;
+    font-size:12px;
+    font-family: Poppins;
+}
+
+  .comment{
+    width: auto;
+    height: auto;
+    background-color:#ddeaff;
+    color: #373737;
+    padding:10px; 
+    border-radius: 20px; 
+}
+
+img{
+    border-radius:50%; 
+}
+.commentField{
+    border:none;
+    border-color: #ddeaff;
+    border-bottom: 1px solid #2691d9;
+    color: black;
+    font-size:15px;
+    font-family: Poppins;
+    display:flex;
+    width:450px; 
+}
+.commentField:focus{
+    outline: none;
+    border-color: #ddeaff;
+    border-bottom: 1px solid #2691d9;
+    color: black;
+    font-size:15px;
+    font-family: Poppins;
+    display:flex;
+    width:450px; 
+}
+.send{
+    width: 20px;
+    height:20px;
+}
+
+
+.userImage{
+    width:30px;
+    height:30px;
+    border: 1 solid #2691d9;
+}

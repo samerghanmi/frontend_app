@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="row mb-5">
+    <div class="col-lg-8 mx-auto">
+        <!-- <h5 class="font-weight-light mb-4 font-italic text-white">Custom rounded search bars with input group</h5> -->
+        <div class="bg-white p-5 rounded shadow">
+            <form [formGroup]="upgradeRequest" (ngSubmit)="upgradeSubmit()">
+
+
+                <div class="container row">
+
+                    <div class="border-info mb-3">
+                        <textarea name="" id="" cols="30" rows="10" class="form-control"
+                            placeholder="Entrer your description here.." formControlName="description"></textarea>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="file mb-1">Justicitation Files </label>
+
+                        <input #imageFile id="file" type="file" class="form-control" (change)="onImagePicked(imageFile,image)" formControlName="file">
+                    </div>
+                    <div class="container row">
+                        <img #image [src]="" alt="">
+                    </div>
+
+                    <!-- <div class="input-group mb-4 border rounded-pill p-1">
+                                        <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon3" class="form-control bg-none border-0">
+                                        <div class="input-group-append border-0">
+                                        <button id="button-addon3" type="button" class="btn btn-link text-success"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div> -->
+
+                    <!-- <div class="container row">
+                        <mat-form-field class="border-info">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker"
+                                formControlName="dateAppointment">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div> -->
+                    <!-- <div class="container row">
+                        <mat-form-field class="border-info">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput formControlName="description"></textarea>
+                        </mat-form-field>
+                    </div> -->
+
+                    <div class="row mt-5" style="display:flex">
+                        <mat-card-actions>
+                            <a><button mat-raised-button color="accent" (onclick)="upgradeSubmit()">Valider</button></a>
+                        </mat-card-actions>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
